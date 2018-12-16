@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<button id="btn">STATES</button>
+<script>
+ var btn=document.getElementById("btn");
+ btn.addEventListener("click",function(){
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "http://roadtrippers.herokuapp.com/api/v1/states/", true);
+xmlhttp.onload=function() {
+    var myObj = JSON.parse(this.responseText);
+     document.getElementById("btn").innerHTML=
+     this.responseText;
+    console.log(myObj);
+  };
+xmlhttp.send();
+});
+</script>
+</body>
+</html>
+
